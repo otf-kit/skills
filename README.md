@@ -1,6 +1,6 @@
 # OTF Agent Skills
 
-Free, MIT [Agent Skills](https://agentskills.io) for building **cross-platform UIs** with
+Free, MIT [Agent Skills](https://www.skills.sh/otf-kit/skills) for building **cross-platform UIs** with
 the open-source [OTF SDK](https://github.com/otf-kit/sdk) — the same component API on
 web, iOS, and Android. Works with **Claude Code, Cursor, Codex, Windsurf, Gemini CLI,
 Vercel Eve, and 70+ skills-compatible agents**.
