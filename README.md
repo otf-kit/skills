@@ -1,9 +1,10 @@
 # OTF Agent Skills
 
-Free, MIT [Agent Skills](https://www.skills.sh/otf-kit/skills) for building **cross-platform UIs** with
-the open-source [OTF SDK](https://github.com/otf-kit/sdk) — the same component API on
-web, iOS, and Android. Works with **Claude Code, Cursor, Codex, Windsurf, Gemini CLI,
-Vercel Eve, and 70+ skills-compatible agents**.
+Free, MIT [Agent Skills](https://www.skills.sh/otf-kit/skills) from OTF — audit an AI-built app
+for what's missing before production, or build **cross-platform UIs** with the open-source
+[OTF SDK](https://github.com/otf-kit/sdk) (the same component API on web, iOS, and Android).
+Works with **Claude Code, Cursor, Codex, Windsurf, Gemini CLI, Vercel Eve, and 70+
+skills-compatible agents**.
 
 [![skills.sh](https://skills.sh/b/otf-kit/skills)](https://skills.sh/otf-kit/skills)
 
@@ -14,13 +15,17 @@ Vercel Eve, and 70+ skills-compatible agents**.
 npx skills add otf-kit/skills
 
 # or pick one
-npx skills add otf-kit/skills --skill otf-ui
+npx skills add otf-kit/skills --skill ship-ready
 ```
 
 Skills install into your agent's skills directory (e.g. `.claude/skills/`) and load on
 demand — your agent reads only each skill's name + description until a task matches.
 
 ## What's inside
+
+**[`ship-ready`](skills/ship-ready/SKILL.md)** — audit any AI-built app for what's missing before it can ship to production (auth, payments, data, error handling, security, deploy, design), then get a prioritized, file-cited plan to close each gap. Read-only — it writes a plan, never touches your code. Works on **any** app; no OTF dependency.
+
+The rest help you build cross-platform UI with the free OTF SDK:
 
 | Skill | Use it to… |
 |---|---|
