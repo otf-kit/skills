@@ -4,7 +4,7 @@
 
 [Skill catalog](https://www.skills.sh/otf-kit/skills) · [SDK source](https://github.com/otf-kit/sdk) · [Web demo](https://ui.otf-kit.dev/) · [Native demo](https://native-preview.otf-kit.dev/)
 
-[![Screenshot of the OTF skill catalog](https://api.microlink.io/?url=https%3A%2F%2Fskills.sh%2Fotf-kit%2Fskills&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000)](https://www.skills.sh/otf-kit/skills)
+[![Screenshot of components built with the OTF SDK](https://cdn.otf-kit.dev/readme/components-motion.gif)](https://otf-kit.dev/components)
 
 ## Install
 
