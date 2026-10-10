@@ -20,7 +20,7 @@ metadata:
 A free, MIT React component library built on [Radix](https://www.radix-ui.com/) +
 [Tailwind CSS v4](https://tailwindcss.com/). Accessible (keyboard + screen-reader)
 by default, themed via shared design tokens, and API-matched to
-`@otfdashkit/ui-native` so the same component names work on native.
+`@otfdashkit/ui-native` so the same component names work on native (props differ per platform).
 
 ## When to use this skill
 

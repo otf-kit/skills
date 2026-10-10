@@ -2,7 +2,7 @@
 
 Free, MIT [Agent Skills](https://www.skills.sh/otf-kit/skills) from OTF — audit an AI-built app
 for what's missing before production, or build **cross-platform UIs** with the open-source
-[OTF SDK](https://github.com/otf-kit/sdk) (the same component API on web, iOS, and Android).
+[OTF SDK](https://github.com/otf-kit/sdk) (shared component names and design tokens on web, iOS, and Android; props differ per platform).
 Works with **Claude Code, Cursor, Codex, Windsurf, Gemini CLI, Vercel Eve, and 70+
 skills-compatible agents**.
 

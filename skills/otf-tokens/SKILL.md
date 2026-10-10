@@ -3,7 +3,7 @@ name: otf-tokens
 description: >-
   Theme any app with @otfdashkit/tokens — the free, open-source (MIT) shared
   design-token system behind the OTF SDK. CSS variables on web, native tokens on
-  mobile, so web and native stay visually identical. Ships ready-made palettes
+  mobile, so web and native share one set of design tokens. Ships ready-made palettes
   (Slate, Warm, Cosmic, Terminal, plus Mono, Lavender, Glacier, Forest, Obsidian,
   Solar, Orchid, Indigo) you switch with one attribute. Use to theme an app, build
   a theme switcher, or keep colors consistent across platforms.
@@ -25,7 +25,7 @@ in any web or Tamagui app, too.
 ## When to use this skill
 
 Activate to theme an app, add or switch a color palette, build a theme switcher, or
-keep web + native looking identical.
+keep web + native on the same design tokens.
 
 ## Install
 
