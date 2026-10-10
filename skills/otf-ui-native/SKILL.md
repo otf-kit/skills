@@ -58,14 +58,14 @@ export default function RootLayout() {
 
 ```tsx
 import { Button, Card, Input } from '@otfdashkit/ui-native'
-// Same names and props as @otfdashkit/ui on the web.
+// Same component names as @otfdashkit/ui on the web; props differ per platform.
 ```
 
 ## Conventions
 
 - Wrap the root **once** in `<OTFProvider>` — no `createTamagui` config needed.
 - Theme through `@otfdashkit/tokens` (see the `otf-tokens` skill) so web and native
-  stay visually identical.
+  share the same design tokens.
 - Reach for these components before raw React Native primitives — they ship the
   shared API, theming, and accessibility.
 

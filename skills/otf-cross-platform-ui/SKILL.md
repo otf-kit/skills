@@ -1,10 +1,10 @@
 ---
 name: otf-cross-platform-ui
 description: >-
-  Build UIs that render the same on web, iOS, and Android from one component API,
-  using OTF's free open-source (MIT) SDK. Use this when starting a cross-platform
-  UI, deciding which OTF package to import, or when you want the same <Button>,
-  <Card>, <Input> — same names, same props, same look — on web and native. Routes
+  Build UIs for web, iOS, and Android from one component set, using OTF's free
+  open-source (MIT) SDK. Use this when starting a cross-platform UI, deciding which
+  OTF package to import, or when you want <Button>, <Card>, <Input> under the same
+  names and the same design tokens on web and native. Props differ per platform. Routes
   to the web (@otfdashkit/ui), native (@otfdashkit/ui-native), and theming
   (@otfdashkit/tokens) packages.
 license: MIT
@@ -14,13 +14,13 @@ metadata:
   packages: "@otfdashkit/ui, @otfdashkit/ui-native, @otfdashkit/tokens"
 ---
 
-# OTF — one component API, web + native
+# OTF — one component set, web + native
 
 OTF is a free, MIT-licensed cross-platform UI SDK. The core idea: `<Button>` from
 **`@otfdashkit/ui`** (web — React, on Radix + Tailwind) and `<Button>` from
-**`@otfdashkit/ui-native`** (native — Expo / React Native) share the **same name,
-the same props, and the same look**. Build once, ship to the browser and to the
-App Store. Own the source — copy-paste or `npm install`, no lock-in.
+**`@otfdashkit/ui-native`** (native — Expo / React Native) share the **same name**
+and the **same design tokens**. They do **not** share the same props: each package has
+its own variants and sizes. Own the source — copy-paste or `npm install`, no lock-in.
 
 ## When to use this skill
 
@@ -36,14 +36,19 @@ to wire the SDK up correctly the first time.
 | **Native** (Expo, React Native — iOS/Android/web) | `@otfdashkit/ui-native` | Tamagui-core |
 | **Theming for either/both** | `@otfdashkit/tokens` | CSS vars on web, native tokens on mobile |
 
-The component **names and props match across `@otfdashkit/ui` and `@otfdashkit/ui-native`** —
-learn the API once, use it everywhere.
+The component **names match for the components both packages ship, and both packages read
+the same `@otfdashkit/tokens`**. Props do not match: check each component's page or source
+before you copy props from one platform to the other. For example, web `Button` takes
+`variant` of `default | secondary | outline | ghost | destructive | link | gradient | texture | shimmer`
+and `size` of `sm | default | lg | xl | icon | icon-sm`; native `Button` takes `variant` of
+`primary | default | outlined | transparent | floating | destructive | shimmer` and a Tamagui
+size token such as `"$4"`.
 
 ```tsx
 // Web
 import { Button, Card, Input } from '@otfdashkit/ui'
 
-// Native — same names, same props. That's the whole point.
+// Native — same component names, its own props (see above).
 import { Button, Card, Input } from '@otfdashkit/ui-native'
 ```
 
