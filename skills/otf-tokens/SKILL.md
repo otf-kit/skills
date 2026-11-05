@@ -46,6 +46,8 @@ import '@otfdashkit/tokens/web.css'
 <html class="theme-cosmic dark">   <!-- dark variant -->
 ```
 
+In React or Next.js (`app/layout.tsx`), write `className` instead of `class` on `<html>`.
+
 Feature code reads the tokens as CSS variables / Tailwind token classes
 (`bg-background`, `text-foreground`, `border-border`, …) — never raw hex. Those classes need the
 OTF Tailwind preset (`@otfdashkit/tokens/tailwind-preset`) in `tailwind.config.js`; the otf-ui
@@ -53,7 +55,8 @@ skill's Set up step shows the config.
 
 ## Ready-made palettes
 
-`Slate` · `Warm` · `Cosmic` · `Terminal` — these four are defined in the web stylesheet
+`Slate` · `Warm` · `Cosmic` · `Terminal` — the class names are lowercase (`theme-slate`, `theme-warm`,
+`theme-cosmic`, `theme-terminal`). These four are defined in the web stylesheet
 (`@otfdashkit/tokens/web.css`), each with a light and dark mode. Add your own by defining a
 `.theme-<name>` block following the same shape.
 
