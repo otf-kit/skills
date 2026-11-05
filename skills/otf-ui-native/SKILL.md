@@ -41,7 +41,7 @@ support (peer range `>=1.100.0 <2.0.0`). Pin Tamagui to 1.x and add `expo-linear
 
 ```bash
 npx expo install expo-linear-gradient
-npm install tamagui@1 @tamagui/core@1 @tamagui/config@1 @tamagui/lucide-icons@1
+pnpm add tamagui@1 @tamagui/core@1 @tamagui/config@1 @tamagui/lucide-icons@1
 ```
 
 ## Set up (once)
