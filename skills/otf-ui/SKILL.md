@@ -2,7 +2,7 @@
 name: otf-ui
 description: >-
   Build accessible, production-ready web UI with @otfdashkit/ui — a free,
-  open-source (MIT) React component library on Radix + Tailwind v4. Use when adding
+  open-source (MIT) React component library on Radix + Tailwind CSS v3. Use when adding
   buttons, forms, dialogs, sheets, tables, charts, command palettes, toasts, and
   more to a React / Next.js / Vite app, theming them, or installing components by
   npm or copy-paste. Components match @otfdashkit/ui-native one-for-one so the same
@@ -18,7 +18,7 @@ metadata:
 # @otfdashkit/ui — web components
 
 A free, MIT React component library built on [Radix](https://www.radix-ui.com/) +
-[Tailwind CSS v4](https://tailwindcss.com/). Accessible (keyboard + screen-reader)
+[Tailwind CSS v3](https://v3.tailwindcss.com/). Accessible (keyboard + screen-reader)
 by default, themed via shared design tokens, and API-matched to
 `@otfdashkit/ui-native` so the same component names work on native (props differ per platform).
 
@@ -36,11 +36,27 @@ pnpm add @otfdashkit/ui @otfdashkit/tokens
 # npm i / yarn add / bun add also work
 ```
 
-Peer dependencies: `react`, `react-dom`, `tailwindcss`.
+Peer dependencies: `react`, `react-dom`, `tailwindcss`. The SDK targets Tailwind v3, the same as the getting-started page:
+
+```bash
+npm install -D tailwindcss@3 tailwindcss-animate postcss autoprefixer
+```
 
 ## Set up (once)
 
-Import the tokens stylesheet and the component styles at your app root
+1. **Tailwind: scan the SDK source and map the tokens.** Without this step the component classes are not generated. Add the OTF preset and the package source to `tailwind.config.js`:
+
+```js
+// tailwind.config.js
+import { otfPreset } from '@otfdashkit/tokens/tailwind-preset'
+
+export default {
+  presets: [otfPreset],
+  content: ['./src/**/*.{ts,tsx}', './node_modules/@otfdashkit/ui/src/**/*.{ts,tsx}'],
+}
+```
+
+2. **Import the tokens stylesheet and the component styles** at your app root
 (`app/layout.tsx` for Next.js, `src/main.tsx` for Vite):
 
 ```tsx
@@ -57,7 +73,7 @@ export function SignInCard() {
   return (
     <Card>
       <Input placeholder="Email" />
-      <Button variant="primary" size="lg">Continue</Button>
+      <Button variant="default" size="lg">Continue</Button>
     </Card>
   )
 }
