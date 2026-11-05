@@ -36,6 +36,14 @@ Peer dependencies (Expo / Tamagui stack): `tamagui`, `@tamagui/core`,
 `@tamagui/config`, `@tamagui/lucide-icons`, `expo-router`, `react`, `react-native`,
 `react-native-reanimated`, `react-native-svg`. Install any your app doesn't already have.
 
+On a fresh Expo SDK 58 app, `npx expo install` pulls Tamagui v3, which this package does not
+support (peer range `>=1.100.0 <2.0.0`). Pin Tamagui to 1.x and add `expo-linear-gradient`:
+
+```bash
+npx expo install expo-linear-gradient
+npm install tamagui@1 @tamagui/core@1 @tamagui/config@1
+```
+
 ## Set up (once)
 
 Wrap your app root in `<OTFProvider>` — it hides the `createTamagui` + config call so
