@@ -4,8 +4,7 @@ description: >-
   Theme any app with @otfdashkit/tokens — the free, open-source (MIT) shared
   design-token system behind the OTF SDK. CSS variables on web, native tokens on
   mobile, so web and native share one set of design tokens. Ships ready-made palettes
-  (Slate, Warm, Cosmic, Terminal, plus Mono, Lavender, Glacier, Forest, Obsidian,
-  Solar, Orchid, Indigo) you switch with one attribute. Use to theme an app, build
+  (Slate, Warm, Cosmic, Terminal) you switch with one class. Use to theme an app, build
   a theme switcher, or keep colors consistent across platforms.
 license: MIT
 metadata:
@@ -35,17 +34,19 @@ pnpm add @otfdashkit/tokens
 
 ## Web
 
-Import the stylesheet once at your app root, then set the palette with a class or
-`data-theme` attribute on `<html>`:
+Import the stylesheet once at your app root, then set the palette with a `theme-<name>` class
+on `<html>`:
 
 ```tsx
 import '@otfdashkit/tokens/web.css'
 ```
 
 ```html
-<html data-theme="cosmic">      <!-- or class="theme-cosmic" -->
-<html data-theme="cosmic" class="dark">   <!-- dark variant -->
+<html class="theme-cosmic">
+<html class="theme-cosmic dark">   <!-- dark variant -->
 ```
+
+In React or Next.js (`app/layout.tsx`), write `className` instead of `class` on `<html>`.
 
 Feature code reads the tokens as CSS variables / Tailwind token classes
 (`bg-background`, `text-foreground`, `border-border`, …) — never raw hex. Those classes need the
@@ -54,9 +55,10 @@ skill's Set up step shows the config.
 
 ## Ready-made palettes
 
-`Slate` · `Warm` · `Cosmic` · `Terminal` · `Mono` · `Lavender` · `Glacier` ·
-`Forest` · `Obsidian` · `Solar` · `Orchid` · `Indigo` — each with a light and dark
-mode. Add your own by defining a `.theme-<name>` block following the same shape.
+`Slate` · `Warm` · `Cosmic` · `Terminal` — the class names are lowercase (`theme-slate`, `theme-warm`,
+`theme-cosmic`, `theme-terminal`). These four are defined in the web stylesheet
+(`@otfdashkit/tokens/web.css`), each with a light and dark mode. Add your own by defining a
+`.theme-<name>` block following the same shape.
 
 ## Native
 

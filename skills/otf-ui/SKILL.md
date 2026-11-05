@@ -106,10 +106,11 @@ export function SignInCard() {
 ## Theming
 
 Tokens resolve to CSS variables. Switch the whole UI's theme with one attribute on
-`<html>` (see the `otf-tokens` skill for the full palette set):
+`<html>` (the `otf-tokens` skill lists the four palettes):
 
 ```tsx
-<html data-theme="cosmic">
+// app/layout.tsx (React and Next.js use className)
+<html className="theme-cosmic">
 ```
 
 ## Conventions
