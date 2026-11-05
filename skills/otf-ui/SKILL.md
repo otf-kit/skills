@@ -35,9 +35,9 @@ pnpm add @otfdashkit/ui @otfdashkit/tokens
 # npm i / yarn add / bun add also work
 ```
 
-Peer dependencies: `react`, `react-dom`, `tailwindcss`. This is the Tailwind v3 path, the same as
-[the getting-started page](https://otf-kit.dev/docs/getting-started). Tailwind v4 apps follow the
-v4 block in the SDK README (`@source` and `@theme`) instead.
+Peer dependencies: `react`, `react-dom`, `tailwindcss`. The steps below are the Tailwind v3 path, the same as
+[the getting-started page](https://otf-kit.dev/docs/getting-started). A Tailwind v4 app can instead follow
+the v4 block (`@source` and `@theme`) in the [SDK README](https://github.com/otf-kit/sdk).
 
 ```bash
 npm install -D tailwindcss@3 tailwindcss-animate postcss autoprefixer
@@ -50,13 +50,13 @@ npm install -D tailwindcss@3 tailwindcss-animate postcss autoprefixer
 
 ```ts
 // tailwind.config.ts
-import animate from tailwindcss-animate
-import { otfPreset } from @otfdashkit/tokens/tailwind-preset
+import animate from 'tailwindcss-animate'
+import { otfPreset } from '@otfdashkit/tokens/tailwind-preset'
 
 export default {
   presets: [otfPreset],
   plugins: [animate],
-  content: [./app/**/*.ts, ./src/**/*.ts, ./node_modules/@otfdashkit/ui/src/**/*.ts],
+  content: ['./app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}', './node_modules/@otfdashkit/ui/src/**/*.{ts,tsx}'],
 }
 ```
 
@@ -72,15 +72,16 @@ export default {
 }
 ```
 
-If the project was scaffolded with Tailwind v4 (for example `create-next-app --tailwind`), replace its
-`@tailwindcss/postcss` config and its `@import "tailwindcss"` line with the two steps on this page.
+If the project was scaffolded with Tailwind v4 (for example `create-next-app --tailwind`) and you
+switch to the v3 path here, replace its `@tailwindcss/postcss` config and its `@import "tailwindcss"` line
+with these steps. To stay on v4, follow the SDK README's v4 block instead; do not mix the two.
 
 3. **Global stylesheet.** Put the token CSS and the component CSS before the Tailwind layers
    (`app/globals.css` for Next.js; for Vite, import this file from `src/main.tsx`):
 
 ```css
-@import @otfdashkit/tokens/web.css;
-@import @otfdashkit/ui/styles;
+@import '@otfdashkit/tokens/web.css';
+@import '@otfdashkit/ui/styles';
 
 @tailwind base;
 @tailwind components;
