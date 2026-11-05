@@ -48,7 +48,9 @@ import '@otfdashkit/tokens/web.css'
 ```
 
 Feature code reads the tokens as CSS variables / Tailwind token classes
-(`bg-background`, `text-foreground`, `border-border`, …) — never raw hex.
+(`bg-background`, `text-foreground`, `border-border`, …) — never raw hex. Those classes need the
+OTF Tailwind preset (`@otfdashkit/tokens/tailwind-preset`) in `tailwind.config.js`; the otf-ui
+skill's Set up step shows the config.
 
 ## Ready-made palettes
 

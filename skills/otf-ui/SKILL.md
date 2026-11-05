@@ -2,11 +2,10 @@
 name: otf-ui
 description: >-
   Build accessible, production-ready web UI with @otfdashkit/ui — a free,
-  open-source (MIT) React component library on Radix + Tailwind v4. Use when adding
+  open-source (MIT) React component library on Radix + Tailwind CSS v3. Use when adding
   buttons, forms, dialogs, sheets, tables, charts, command palettes, toasts, and
   more to a React / Next.js / Vite app, theming them, or installing components by
-  npm or copy-paste. Components match @otfdashkit/ui-native one-for-one so the same
-  API works on native.
+  npm or copy-paste. Component names match @otfdashkit/ui-native; props differ per platform.
 license: MIT
 metadata:
   source: otf-kit.dev
@@ -18,7 +17,7 @@ metadata:
 # @otfdashkit/ui — web components
 
 A free, MIT React component library built on [Radix](https://www.radix-ui.com/) +
-[Tailwind CSS v4](https://tailwindcss.com/). Accessible (keyboard + screen-reader)
+[Tailwind CSS v3](https://v3.tailwindcss.com/). Accessible (keyboard + screen-reader)
 by default, themed via shared design tokens, and API-matched to
 `@otfdashkit/ui-native` so the same component names work on native (props differ per platform).
 
@@ -36,16 +35,57 @@ pnpm add @otfdashkit/ui @otfdashkit/tokens
 # npm i / yarn add / bun add also work
 ```
 
-Peer dependencies: `react`, `react-dom`, `tailwindcss`.
+Peer dependencies: `react`, `react-dom`, `tailwindcss`. The steps below are the Tailwind v3 path, the same as
+[the getting-started page](https://otf-kit.dev/docs/getting-started). A Tailwind v4 app can instead follow
+the v4 block (`@source` and `@theme`) in the [SDK README](https://github.com/otf-kit/sdk/blob/main/packages/ui/README.md#tailwind-setup).
+
+```bash
+npm install -D tailwindcss@3 tailwindcss-animate postcss autoprefixer
+```
 
 ## Set up (once)
 
-Import the tokens stylesheet and the component styles at your app root
-(`app/layout.tsx` for Next.js, `src/main.tsx` for Vite):
+1. **Tailwind config: the OTF preset, the animation plugin, and the component source.** Without the
+   source scan, the component classes are not generated.
 
-```tsx
-import '@otfdashkit/tokens/web.css'
-import '@otfdashkit/ui/styles'
+```ts
+// tailwind.config.ts
+import animate from 'tailwindcss-animate'
+import { otfPreset } from '@otfdashkit/tokens/tailwind-preset'
+
+export default {
+  presets: [otfPreset],
+  plugins: [animate],
+  content: ['./app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}', './node_modules/@otfdashkit/ui/src/**/*.{ts,tsx}'],
+}
+```
+
+Import the preset from `@otfdashkit/tokens/tailwind-preset`, not from `@otfdashkit/tokens`: the package
+root also loads the native config, which a web-only install cannot resolve.
+
+2. **PostCSS.** Tailwind v3 runs as a PostCSS plugin, so the app needs this file:
+
+```js
+// postcss.config.mjs
+export default {
+  plugins: { tailwindcss: {}, autoprefixer: {} },
+}
+```
+
+If the project was scaffolded with Tailwind v4 (for example `create-next-app --tailwind`) and you
+switch to the v3 path here, replace its `@tailwindcss/postcss` config and its `@import "tailwindcss"` line
+with these steps. To stay on v4, follow the SDK README's v4 block instead; do not mix the two.
+
+3. **Global stylesheet.** Put the token CSS and the component CSS before the Tailwind layers
+   (`app/globals.css` for Next.js; for Vite, import this file from `src/main.tsx`):
+
+```css
+@import '@otfdashkit/tokens/web.css';
+@import '@otfdashkit/ui/styles';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 ## Use
@@ -57,7 +97,7 @@ export function SignInCard() {
   return (
     <Card>
       <Input placeholder="Email" />
-      <Button variant="primary" size="lg">Continue</Button>
+      <Button variant="default" size="lg">Continue</Button>
     </Card>
   )
 }

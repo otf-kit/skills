@@ -32,7 +32,7 @@ to wire the SDK up correctly the first time.
 
 | You're building for… | Import | Renders with |
 |---|---|---|
-| **Web** (Next.js, Vite, React) | `@otfdashkit/ui` | Radix + Tailwind v4 |
+| **Web** (Next.js, Vite, React) | `@otfdashkit/ui` | Radix + Tailwind v3 |
 | **Native** (Expo, React Native — iOS/Android/web) | `@otfdashkit/ui-native` | Tamagui-core |
 | **Theming for either/both** | `@otfdashkit/tokens` | CSS vars on web, native tokens on mobile |
 
