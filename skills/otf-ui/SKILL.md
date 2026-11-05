@@ -37,7 +37,7 @@ pnpm add @otfdashkit/ui @otfdashkit/tokens
 
 Peer dependencies: `react`, `react-dom`, `tailwindcss`. The steps below are the Tailwind v3 path, the same as
 [the getting-started page](https://otf-kit.dev/docs/getting-started). A Tailwind v4 app can instead follow
-the v4 block (`@source` and `@theme`) in the [SDK README](https://github.com/otf-kit/sdk).
+the v4 block (`@source` and `@theme`) in the [SDK README](https://github.com/otf-kit/sdk/blob/main/packages/ui/README.md#tailwind-setup).
 
 ```bash
 npm install -D tailwindcss@3 tailwindcss-animate postcss autoprefixer
