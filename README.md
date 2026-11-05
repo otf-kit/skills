@@ -30,7 +30,7 @@ The rest help you build cross-platform UI with the free OTF SDK:
 | Skill | Use it to… |
 |---|---|
 | [`otf-cross-platform-ui`](skills/otf-cross-platform-ui/SKILL.md) | Build one UI for web + native; decide which OTF package to import |
-| [`otf-ui`](skills/otf-ui/SKILL.md) | Build accessible **web** UI with `@otfdashkit/ui` (React · Radix · Tailwind v4) |
+| [`otf-ui`](skills/otf-ui/SKILL.md) | Build accessible **web** UI with `@otfdashkit/ui` (React · Radix · Tailwind v3) |
 | [`otf-ui-native`](skills/otf-ui-native/SKILL.md) | Build **native** iOS/Android/web UI with `@otfdashkit/ui-native` (Expo) |
 | [`otf-tokens`](skills/otf-tokens/SKILL.md) | Theme any app with `@otfdashkit/tokens` — same palette on web + native |
 
